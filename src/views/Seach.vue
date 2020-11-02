@@ -5,7 +5,15 @@
         </base-nav>
         <div class="main">
             <!-- 搜索历史 -->
-            <seach-history @seach="seach"></seach-history>
+            <seach-history @seach="seach" v-if="!keyworld"></seach-history>
+            <!-- 搜索无数据 -->
+            <no-result v-if="keyworld&&seachData.length===0"></no-result>
+            <!-- 有数据 -->
+            <div v-if="keyworld&&seachData.length!==0" class="seach_list">
+                <index-list></index-list>
+            </div>
+            
+
         </div>
         <div class="recommend">
             <div class="title">推荐给你</div>
@@ -16,15 +24,18 @@
 <script>
 import IndexList from "@/components/IndexList.vue"
 import SeachHistory from "@/components/SeachHistory.vue"
+import NoResult from "@/components/NoResult.vue"
 
 export default {
     components: {
         "index-list": IndexList,
-        "seach-history": SeachHistory
+        "seach-history": SeachHistory,
+        "no-result": NoResult
     },
     data() {
         return {
-            keyworld:"1",
+            keyworld:"",
+            seachData:[]
         }
     },
     created() {
@@ -49,9 +60,12 @@ export default {
     }
     .main {
         background: #ffffff;
-        min-height: 5.5467rem;
+        min-height: 5.3467rem;
         margin-bottom: 0.2667rem;
         border-radius: 0 0 0.2667rem 0.2667rem;
+        .seach_list{
+            padding: 0 0.4rem
+        }
     }
     .recommend {
         border-radius: 0.2667rem 0.2667rem 0 0;

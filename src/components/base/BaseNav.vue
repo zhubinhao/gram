@@ -2,7 +2,8 @@
   <div class="BaseNav">
     <i class="iconfont icon-zuo" @click="back"></i>
     <i class="iconfont icon-seach" v-if="seach"/>
-    <input type="text" class="seach_input" :value="keyworld" v-if="seach" placeholder="请输入搜索内容" @input="$emit('onkeyup',$event.target.value)">
+    <input type="text" class="seach_input" :value="keyworld" v-if="seach" placeholder="请输入搜索内容" @input="$emit('change',$event.target.value)">
+    <img :src="require('@/assets/img/clear.png')" @click="clear" v-if="seach&&keyworld" class="clear">
     <div class="content"  v-if="!seach">{{title||"大牛试玩"}}</div>
     <div class="Base_btn"><slot></slot></div>
   </div>
@@ -13,7 +14,7 @@ export default {
   name: 'BaseNav',
   model:{
     prop: 'keyworld',
-    event: 'onkeyup'
+    event: 'change'
   },
   props: {
     title: String,
@@ -28,6 +29,10 @@ export default {
     // 返回上一页
     back(){
       this.$router.go(-1)
+    },
+    clear(){
+      this.$emit('change','')
+
     }
   }
 }
@@ -65,6 +70,14 @@ export default {
     position: absolute;
     left: 1.3333rem;
     color: #A4A4A4;
+  }
+  .clear{
+    position: absolute;
+    right: 1.68rem;
+    width: 0.56rem;
+    height: 0.56rem;
+
+
   }
   .seach_input{
     width: 7.6rem;
