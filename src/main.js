@@ -8,13 +8,14 @@ import Vant from 'vant';
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import { Lazyload } from 'vant';
+import { Dialog } from 'vant';
 import 'vant/lib/index.css';
 import './assets/fonts/iconfont.css'
 
 Vue.config.productionTip = false
 
 Vue.use(Vant);
-Vue.use(Lazyload);
+Vue.use(Dialog);
 Vue.use(Lazyload, {
   lazyComponent: true,
 });
