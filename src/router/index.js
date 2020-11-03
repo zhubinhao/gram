@@ -20,6 +20,11 @@ const routes = [
     name: 'Welfare',
     component: () => import('../views/Welfare.vue')
   },
+  {
+    path: '/my',//我参与的
+    name: 'My',
+    component: () => import('../views/My.vue')
+  },
 ]
 
 const router = new VueRouter({
