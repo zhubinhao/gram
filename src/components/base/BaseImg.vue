@@ -1,5 +1,12 @@
 <template>
-  <van-image lazy-load :src="src" :error-icon="loading" class="BaseImg" :loading-icon="loading" :fit="fit"/>
+  <van-image 
+  lazy-load 
+  :src="src" 
+  :error-icon="loading" 
+  :loading-icon="loading" 
+  :fit="fit"
+  @click="click"
+  class="BaseImg" />
 </template>
 
 <script>
@@ -16,6 +23,11 @@ export default {
         default: "cover"
     },//填充模式
   },
+  methods:{
+    click(){
+      this.$emit("click")
+    }
+  }
  
 }
 </script>

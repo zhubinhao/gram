@@ -74,7 +74,7 @@ export default {
   .recommend {
     border-radius: 0.2667rem 0.2667rem 0 0;
     background: #ffffff;
-    padding: 0.1867rem 0.4rem 0 0.4rem;
+    padding: 0.4rem 0.4rem 0 0.4rem;
     .title {
       font-size: 0.4267rem;
       font-weight: bold;

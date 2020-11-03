@@ -49,6 +49,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #ffffff;
   .icon-zuo{
     font-size: 0.4rem !important;
     padding: 0.1333rem;

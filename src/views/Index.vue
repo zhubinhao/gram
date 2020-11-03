@@ -9,7 +9,7 @@
     </div>
     <!-- 广告位 -->
     <div class="img_box">
-      <base-img class="img" src="1"/>
+      <base-img class="img" src="1" @click="toWelfare" />
       <base-img class="img" src="2" />
     </div>
 
@@ -59,6 +59,10 @@ export default {
     // 改变导航栏
     changeBar(id){
       this.barId = id
+    },
+    //去每日福利
+    toWelfare(){
+      this.$router.push({name:"Welfare"})
     }
   }
   
