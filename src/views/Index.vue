@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <base-nav title="大牛试玩">
-     <div class="withdraw">提现</div>
+     <div class="withdraw" @click="withdrawal">提现</div>
     </base-nav>
     <!-- 搜索 -->
     <div class="seach_box" @click="seach">
@@ -59,6 +59,10 @@ export default {
     // 改变导航栏
     changeBar(id){
       this.barId = id
+    },
+    // 跳转提现页面
+    withdrawal() {
+      this.$router.push({name: 'Withdrawal'});
     }
   }
   

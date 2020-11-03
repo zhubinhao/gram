@@ -14,7 +14,12 @@ const routes = [
     path: '/seach',
     name: 'Seach',
     component: () => import('../views/Seach.vue')
-  }
+  },
+  {
+    path: '/withdrawal',
+    name: 'Withdrawal',
+    component: () => import('../views/Withdrawal.vue')
+  },
 ]
 
 const router = new VueRouter({
