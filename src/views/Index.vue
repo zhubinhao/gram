@@ -9,7 +9,7 @@
     </div>
     <!-- 广告位 -->
     <div class="img_box">
-      <base-img class="img" src="1"/>
+      <base-img class="img" src="1" @click="toWelfare" />
       <base-img class="img" src="2" />
     </div>
 
@@ -25,27 +25,15 @@
 </template>
 <script>
 import IndexList from "@/components/IndexList.vue"
+import tableBar from "@/mixins/tableBar.js"
+
 export default {
+  mixins:[tableBar],
   components:{
     "index-list": IndexList
   },
   data(){
     return {
-      barList:[{
-        name:"快赚",
-        id:"1"
-      },{
-        name:"益智",
-        id:"2"
-      },{
-        name:"手游",
-        id:"3"
-      },{
-        name:"免安装",
-        id:"4"
-      }],
-      barId:1,//导航栏选中id
-
     }
   },
   created(){
@@ -54,7 +42,6 @@ export default {
     // 去搜索页面
     seach(){
       this.$router.push({name:"Seach"})
-
     },
     // 改变导航栏
     changeBar(id){
@@ -63,6 +50,10 @@ export default {
     // 跳转提现页面
     withdrawal() {
       this.$router.push({name: 'Withdrawal'});
+    //去每日福利
+    },
+    toWelfare(){
+      this.$router.push({name:"Welfare"})
     }
   }
   

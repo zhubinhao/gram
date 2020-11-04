@@ -1,21 +1,21 @@
 <template>
-    <div class="IndexList">
+    <div class="PlayList">
         <base-img class="img" :loading="loadingImg" />
         <div class="main">
             <div class="title">口袋电玩捕鱼</div>
             <div class="info">玩游戏领红包</div>
-            <div class="play">已有<span>2.3万+</span>参与试玩</div>
+            <div class="play">你已累计赚取<span>999.00</span>元</div>
         </div>
         <div class="right">
             <span>+0.60元</span>
-            <div class="btn">3分钟赚取</div>
+            <div class="btn">继续赚</div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'IndexList',
+    name: 'PlayList',
     props: {
         msg: String
     },
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.IndexList {
+.PlayList {
     height: 2.6533rem;
     display: flex;
     justify-content: flex-start;
@@ -83,13 +83,14 @@ export default {
         .btn {
             width: 2.3733rem;
             height: 0.9067rem;
-            background: #ff8239;
+            border:1px solid #ff8239;
             border-radius: 0.52rem;
             font-size: 0.3733rem;
             font-weight: 500;
-            color: #ffffff;
+            color: #ff8239;
             line-height: 0.9067rem;
             text-align: center;
+            box-sizing: border-box;
         }
     }
 }

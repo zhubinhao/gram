@@ -11,7 +11,7 @@ const routes = [
     component: Index
   },
   {
-    path: '/seach',
+    path: '/seach',//搜索页面
     name: 'Seach',
     component: () => import('../views/Seach.vue')
   },
@@ -19,6 +19,16 @@ const routes = [
     path: '/withdrawal',
     name: 'Withdrawal',
     component: () => import('../views/Withdrawal.vue')
+  },
+  {
+    path: '/welfare',//每日福利
+    name: 'Welfare',
+    component: () => import('../views/Welfare.vue')
+  },
+  {
+    path: '/my',//我参与的
+    name: 'My',
+    component: () => import('../views/My.vue')
   },
 ]
 
